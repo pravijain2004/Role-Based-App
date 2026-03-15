@@ -138,38 +138,6 @@ const Dashboard = () => {
               </CardContent>
             </Card>
           </Grid>
-
-          <Grid item xs={12} md={5}>
-            <Stack gap={2} height="100%">
-
-              <Card elevation={0} sx={{ bgcolor: light.card, border: `1px solid #bbf7d0`, borderRadius: 3, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
-                <CardContent sx={{ p: '20px 22px !important' }}>
-                  <Stack direction="row" alignItems="center" gap={1} mb={1.5}>
-                    <LockIcon sx={{ color: '#16a34a', fontSize: 16 }} />
-                    <Typography sx={{ color: '#111827', fontWeight: 600, fontSize: 14 }}>Protected API</Typography>
-                  </Stack>
-                  <Box sx={{ bgcolor: '#f0fdf4', borderRadius: 2, p: 1.8, border: `1px solid #bbf7d0` }}>
-                    {loading ? (
-                      <Stack direction="row" gap={1} alignItems="center">
-                        <CircularProgress size={13} sx={{ color: '#16a34a' }} />
-                        <Typography sx={{ color: '#16a34a', fontFamily: 'monospace', fontSize: 12 }}>
-                          Fetching /api/dashboard…
-                        </Typography>
-                      </Stack>
-                    ) : (
-                      <>
-                        <Typography sx={{ color: '#9ca3af', fontFamily: 'monospace', fontSize: 12 }}>GET /api/dashboard</Typography>
-                        <Typography sx={{ color: '#16a34a', fontFamily: 'monospace', fontSize: 12 }}>200 OK</Typography>
-                        <Typography sx={{ color: '#15803d', fontFamily: 'monospace', fontSize: 12 }}>
-                          "{serverMessage}"
-                        </Typography>
-                      </>
-                    )}
-                  </Box>
-                </CardContent>
-              </Card>
-            </Stack>
-          </Grid>
         </Grid>
 
         <Card elevation={0} sx={{ bgcolor: light.card, border: `1px solid ${light.border}`, borderRadius: 3, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
