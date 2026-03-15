@@ -125,7 +125,10 @@ const Register = () => {
         formData.role
       );
 
-      navigate('/dashboard');
+      if (formData.role === 'admin') navigate('/admin');
+      else if (formData.role === 'manager') navigate('/manager');
+      else navigate('/dashboard');
+
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed');
     } finally {
@@ -168,7 +171,7 @@ const Register = () => {
       >
         <CardContent sx={{ p: '36px 32px !important' }}>
 
-          {/* Header */}
+         
 
           <Stack alignItems="center" mb={3}>
             <Box
@@ -212,7 +215,7 @@ const Register = () => {
 
           <Stack component="form" onSubmit={handleSubmit} spacing={2}>
 
-            {/* Name */}
+           
 
             <TextField
               label="Full name"
@@ -235,7 +238,7 @@ const Register = () => {
               }}
             />
 
-            {/* Email */}
+           
 
             <TextField
               label="Email address"
@@ -259,7 +262,7 @@ const Register = () => {
               }}
             />
 
-            {/* Password */}
+            
 
             <Box>
               <TextField
@@ -322,7 +325,7 @@ const Register = () => {
               )}
             </Box>
 
-            {/* Roles */}
+           
 
             <Box>
               <Typography
@@ -375,7 +378,7 @@ const Register = () => {
               </Box>
             </Box>
 
-            {/* Terms */}
+            
 
             <FormControlLabel
               control={
@@ -392,7 +395,7 @@ const Register = () => {
               }
             />
 
-            {/* Submit */}
+            
 
             <Button
               type="submit"

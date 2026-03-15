@@ -45,15 +45,14 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-    setLoading(true);
     try {
-      await login(formData.email, formData.password);
-      navigate('/dashboard');
-    } catch (err) {
-      setError(err.response?.data?.message || 'Login failed. Please try again.');
-    } finally {
-      setLoading(false);
+      const loggedInUser = await login(email, password); // ⬅️ get returned user
+    
+      if (loggedInUser.role === 'admin') navigate('/admin');
+      else if (loggedInUser.role === 'manager') navigate('/manager');
+      else navigate('/dashboard');
+    }   catch (err) {
+      setError(err.response?.data?.message || 'Login failed');
     }
   };
 

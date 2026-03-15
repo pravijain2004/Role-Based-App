@@ -103,7 +103,7 @@ const Navbar = () => {
                 </Tooltip>
               )}
 
-              {user.role === 'admin' && (
+              {user.role === 'admin'|| 'manager' && (
                 <Tooltip title="Manager Dashboard">
                   <Button
                     component={Link}

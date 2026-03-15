@@ -2,7 +2,7 @@ import User from '../models/User.js';
 import generateToken from '../utils/generateToken.js';
 import bcrypt from "bcryptjs";
 
-// helper function
+
 const sendTokenResponse = (user, token, statusCode, res) => {
   res.cookie('token', token, {
     httpOnly: true,                                      

@@ -29,6 +29,7 @@ export const AuthProvider = ({ children }) => {
     });
 
     setUser(data.user);
+    return data.user
   };
 
   const login = async(email,password) => {
@@ -38,6 +39,7 @@ export const AuthProvider = ({ children }) => {
     });
 
     setUser(data.user);
+    return data.user
   };
 
   const logout = async () =>{

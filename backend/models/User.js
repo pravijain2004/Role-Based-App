@@ -21,10 +21,10 @@ const userSchema = new mongoose.Schema(
       default: "user"
     }
   },
-  { timestamps: true }  // ← fix: timestamps not timestamp
+  { timestamps: true }  
 );
 
-// ↓ This line was completely missing — converts schema to model
+
 const User = mongoose.model("User", userSchema);
 
 export default User;
